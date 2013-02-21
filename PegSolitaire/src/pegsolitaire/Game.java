@@ -8,6 +8,10 @@ public class Game {
 	public static void main(String[] args)
 	{
 		Board b = new Board();
+                int state = 0;
+                //firstChoice = new Rectangle();
+                //rects = new List<List<Rectangle>>();
+                
 		b.printBoard();
 		
 		Scanner scan = new Scanner(System.in);
@@ -27,8 +31,8 @@ public class Game {
 			if(c1 != null && c2 != null)
 			{
 				//input was good, proceed to make the move if possible
-				boolean moveMade = b.move(c1, c2);
-				if(moveMade == false)
+				Coordinate moveMade = b.move(c1, c2);
+				if(moveMade == null)
 				{
 					System.out.println("Bad Move: try again");
 				}
